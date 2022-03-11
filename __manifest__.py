@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Wedding Masbin",
+    'name': "Wedding Masbin 14",
 
     'summary': """
         Wedding""",
