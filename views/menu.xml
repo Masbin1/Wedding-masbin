@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <menuitem
+        id="wedding_menu_rot"
+        name="Wedding MasBin"
+        sequence="10"
+        />
+
+    <menuitem
+        id="wedding_akomodasi_menu_categ"
+        name="Akomodasi"
+        parent="wedding_menu_root"
+        sequence="10"/>
+</odoo>
