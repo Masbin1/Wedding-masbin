@@ -6,10 +6,12 @@ class Panggung(models.Model):
     _description = 'Panggung Deskripsi'
 
     name = fields.Char(string='Name')
-    pelaminan = fields.Char(string='Tipe Pelaminan')
+    pelaminan = fields.Many2one(comodel_name='wedding.pelaminan', string='Tipe Pelaminan')
     bunga = fields.Selection(string='Bunga', selection=[('bunga hidup', 'bunga hidup'), ('bunga mati', 'bunga mati'),])
     accesories = fields.Char(string='Accessories Pelaminan')
-    harga = fields.Integer(string='Harga Sewa')
+    harga = fields.Char(compute='_compute_harga', string='Harga')
     
-    
-    
+    @api.depends('')
+    def _compute_harga(self):
+        for record in self:
+            record.harga = harga.pelaminan.harga

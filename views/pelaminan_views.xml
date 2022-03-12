@@ -14,6 +14,27 @@
             </tree>
         </field>
     </record>
+
+    <!-- wedding.pelaminan form view -->
+    <record id="wedding_pelaminan_view_form" model="ir.ui.view">
+        <field name="name">wedding pelaminan</field>
+        <field name="model">wedding.pelaminan</field>
+        <field name="arch" type="xml">
+            <form string="Dafta Pelaminan">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="harga"/>
+                    </group>
+                    <group>
+                        <field name="deskripsi"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <!-- wedding.pelaminan action window -->
     <record id="wedding_pelaminan_action" model="ir.actions.act_window">
         <field name="name">Pelaminan</field>
