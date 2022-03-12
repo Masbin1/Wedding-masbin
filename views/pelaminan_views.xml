@@ -15,7 +15,7 @@
         </field>
     </record>
     <!-- wedding.pelaminan action window -->
-    <record id="wedding.pelaminan_action" model="ir.actions.act_window">
+    <record id="wedding_pelaminan_action" model="ir.actions.act_window">
         <field name="name">Pelaminan</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wedding.pelaminan</field>
