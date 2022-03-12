@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <menuitem
-        id="wedding_menu_rot"
+        id="wedding_menu_root"
         name="Wedding MasBin"
         sequence="10"
         />
