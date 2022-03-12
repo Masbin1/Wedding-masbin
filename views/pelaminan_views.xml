@@ -26,6 +26,6 @@
     id="wedding_pelaminan_menu_act" 
     name="Pelaminan" 
     parent="wedding_akomodasi_menu_categ" 
-    action="" 
+    action="wedding_pelaminan_action" 
     sequence="20"/>
 </odoo>
