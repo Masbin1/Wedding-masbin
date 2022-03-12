@@ -7,7 +7,7 @@ class Panggung(models.Model):
 
     name = fields.Char(string='Name')
     pelaminan = fields.Char(string='Tipe Pelaminan')
-    bunga = fields.Char(string='bunga')
+    bunga = fields.Selection(string='Bunga', selection=[('bunga hidup', 'bunga hidup'), ('bunga mati', 'bunga mati'),])
     accesories = fields.Char(string='Accessories Pelaminan')
     harga = fields.Integer(string='Harga Sewa')
     
