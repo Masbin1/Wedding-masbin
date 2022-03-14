@@ -25,13 +25,13 @@ class Panggung(models.Model):
     @api.depends('pelaminan_id','kursipengantin_id')
     def _compute_harga(self):
         for record in self:
-            record.harga = record.pelaminan.harga + record.kursipengantin_id.harga
+            record.harga = record.pelaminan_id.harga + record.kursipengantin_id.harga
 
     stok = fields.Integer(string='Stok Paket Panggung')
-    des_pelaminann = fields.Char(compute='_compute_des_pelaminann', string='Deskripsi Pelaminan')
+    des_pelaminan = fields.Char(compute='_compute_des_pelaminan', string='Deskripsi Pelaminan')
     
     @api.depends('pelaminan_id')
-    def _compute_des_pelaminann(self):
+    def _compute_des_pelaminan(self):
         for record in self:
             record.des_pelaminan = record.pelaminan_id.deskripsi
     
