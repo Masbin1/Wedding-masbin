@@ -20,7 +20,7 @@ class Panggung(models.Model):
     
     bunga = fields.Selection(string='Bunga', selection=[('bunga hidup', 'bunga hidup'), ('bunga mati', 'bunga mati'),])
     accesories = fields.Char(string='Accessories Pelaminan')
-    harga = fields.Char(compute='_compute_harga', string='Harga')
+    harga = fields.Integer(compute='_compute_harga', string='Harga')
     
     @api.depends('pelaminan_id','kursipengantin_id')
     def _compute_harga(self):
