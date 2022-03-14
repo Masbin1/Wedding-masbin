@@ -4,3 +4,4 @@ from . import models
 from . import panggung
 from . import partnert
 from . import pelaminan
+from . import kursipengantin
