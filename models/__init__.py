@@ -7,3 +7,4 @@ from . import pelaminan
 from . import kursipengantin
 from . import kursitamu
 from . import order
+from . import orderkursitamu
