@@ -9,6 +9,7 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/>
+                <field name="total"/>
                 <field name="orderdetail_ids"/>
             </tree>
         </field>
@@ -24,7 +25,20 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/>
-                        <field name="orderdetail_ids"/>      
+                        <field name="total"/>
+                    
+                            <notebook colspan='4'>
+                                <page name="panggung" string="Panggung">
+                                    <field name="orderdetail_ids">
+                                        <tree editable='bottom'>
+                                            <field name="panggung_id"/>
+                                            <field name="harga_satuan"/>
+                                            <field name="qty"/>
+                                            <field name="harga" sum="Total"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                            </notebook>
                     </group>
                 </sheet>
             </form>
