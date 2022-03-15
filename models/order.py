@@ -30,7 +30,7 @@ class OrderDetail(models.Model):
         ('kursi tamu', 'kursi tamu')], string='name')
     harga = fields.Integer(compute='_compute_harga', string='Harga')
     qty = fields.Integer(string='Quantity')
-    harga_satuan = fields.Char(compute='_compute_harga_satuan', string='Harga Satuan')
+    harga_satuan = fields.Integer(compute='_compute_harga_satuan', string='Harga Satuan')
     
     @api.depends('panggung_id')
     def _compute_harga_satuan(self):
