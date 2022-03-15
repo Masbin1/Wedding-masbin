@@ -16,10 +16,21 @@ class Panggung(models.Model):
     kursipengantin_id = fields.Many2one(
         comodel_name='wedding.kursipengantin', 
         string='Kursi Pengantin',
-        required=True,)
-    
-    bunga = fields.Selection(string='Bunga', selection=[('bunga hidup', 'bunga hidup'), ('bunga mati', 'bunga mati'),])
+        required=True,
+        )
+    bunga = fields.Selection(
+        string='Bunga', 
+        selection=[
+            ('bunga hidup', 'bunga hidup'), 
+            ('bunga mati', 'bunga mati'),]
+            )
     accesories = fields.Char(string='Accessories Pelaminan')
+    orderdetail_ids = fields.One2many(
+        comodel_name='wedding.orderdetail', 
+        inverse_name='panggung_id', 
+        string='Order Detail'
+        )
+    
     harga = fields.Integer(compute='_compute_harga', string='Harga')
     
     @api.depends('pelaminan_id','kursipengantin_id')

@@ -3,12 +3,13 @@
 
     <!-- wedding.order tree view -->
     <record id="wedding_order_view_tree" model="ir.ui.view">
-        <field name="name">Wedding Order</field>
+        <field name="name">Order Panggung</field>
         <field name="model">wedding.order</field>
         <field name="arch" type="xml">
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/>
+                <field name="tanggal_pesan"/>
                 <field name="total"/>
                 <field name="orderdetail_ids"/>
             </tree>
@@ -25,8 +26,8 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/>
+                        <field name="tanggal_pesan"/>
                         <field name="total"/>
-                    
                             <notebook colspan='4'>
                                 <page name="panggung" string="Panggung">
                                     <field name="orderdetail_ids">
@@ -47,7 +48,7 @@
 
     <!-- wedding.order action window -->
     <record id="wedding_order_action" model="ir.actions.act_window">
-        <field name="name">Wedding Order</field>
+        <field name="name">Order Panggung</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">wedding.order</field>
         <field name="view_mode">tree,form</field>
