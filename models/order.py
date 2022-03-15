@@ -1,3 +1,5 @@
+from datetime import datetime
+from email.policy import default
 from odoo import api, fields, models
 
 
@@ -10,7 +12,8 @@ class Order(models.Model):
         inverse_name='order_id', 
         string='Orde Detail')
     name = fields.Char(string='Kode order', required=True)
-    total = fields.Char(compute='_compute_total', string='total', store=True)
+    tanggal_pesan = fields.Date('Tanggal Pesanan', default=fields.Datetime.now)
+    total = fields.Integer(compute='_compute_total', string='total', store=True)
     
     @api.depends('orderdetail_ids')
     def _compute_total(self):
@@ -25,10 +28,11 @@ class OrderDetail(models.Model):
 
     order_id = fields.Many2one(comodel_name='wedding.order', string='Order')
     panggung_id = fields.Many2one(comodel_name='wedding.panggung', string='Panggung')
+
     name = fields.Selection([
         ('panggung', 'panggung'),
         ('kursi tamu', 'kursi tamu')], string='name')
-    harga = fields.Integer(compute='_compute_harga', string='Harga')
+    harga = fields.Integer(compute='_compute_harga', string='Harga', store=True)
     qty = fields.Integer(string='Quantity')
     harga_satuan = fields.Integer(compute='_compute_harga_satuan', string='Harga Satuan')
     
