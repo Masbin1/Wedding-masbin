@@ -46,3 +46,10 @@ class OrderDetail(models.Model):
     def _compute_harga(self):
         for record in self:
             record.harga = record.panggung_id.harga * record.qty
+
+    @api.model
+    def create(self,vals):
+        record = super(OrderDetail, self).create(vals) 
+        if record.qty:
+            self.env['wedding.panggung'].search([('id','=',record.panggung_id.id)]).write({'stok':record.panggung_id.stok-record.qty})
+            return 
